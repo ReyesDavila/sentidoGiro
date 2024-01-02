@@ -1,0 +1,29 @@
+function sentidoGiro(anguloActual_DXN2024,anguloFinal_DXN2024)
+{
+	anguloActual_DXN2024 = argument0;
+	anguloFinal_DXN2024 = argument1;
+
+	radio_DXN2024 =  200;
+	center_x_DXN2024 = 0;
+	center_y_DXN2024 = 0;
+
+	angulo_izquierda_DXN2024 = anguloActual_DXN2024-45;
+	angulo_derecha_DXN2024 = anguloActual_DXN2024+45;
+
+	xB_DXN2024 = center_x_DXN2024+radio_DXN2024*cos(anguloFinal_DXN2024*pi/180);
+	yB_DXN2024 = center_y_DXN2024-radio_DXN2024*sin(anguloFinal_DXN2024*pi/180);
+
+	xizquierda_DXN2024 = center_x_DXN2024+radio_DXN2024*cos(angulo_izquierda_DXN2024*pi/180);
+	yizquierda_DXN2024 = center_y_DXN2024-radio_DXN2024*sin(angulo_izquierda_DXN2024*pi/180);
+	distanciaizquierda_DXN2024 = point_distance(xizquierda_DXN2024,yizquierda_DXN2024,xB_DXN2024,yB_DXN2024);
+
+	xderecha_DXN2024 = center_x_DXN2024+radio_DXN2024*cos(angulo_derecha_DXN2024*pi/180);
+	yderecha_DXN2024 = center_y_DXN2024-radio_DXN2024*sin(angulo_derecha_DXN2024*pi/180);
+	distanciaderecha_DXN2024 = point_distance(xderecha_DXN2024,yderecha_DXN2024,xB_DXN2024,yB_DXN2024);
+
+	salida_DXN2024 = 1;
+	if(distanciaderecha_DXN2024>distanciaizquierda_DXN2024){salida_DXN2024=-1}
+
+	return salida_DXN2024;
+}
+
